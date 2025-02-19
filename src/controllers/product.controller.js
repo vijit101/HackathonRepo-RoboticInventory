@@ -21,24 +21,29 @@ export default class ProductController{
         res.render("new-product",{errorMessage:null});
     }
 
+    get3DView(req,res){
+        res.render("new-product",{errorMessage:null});
+    }
+
     addNewProduct(req,res){
         ProductModel.append(req.body); // req . body gets the prod data in obj form 
         let prod = ProductModel.get();
         return res.render("products",{prods:prod}); // make sure the key is prods as its used in product ejs better to use an enum and save it as prods 
     }
 
-    addNewProduct(req,res){
-        console.log(JSON.stringify(req.body));
-        ProductModel.append(req.body); // req . body gets the prod data in obj form 
-        let prod = ProductModel.get();
-        return res.render("products",{prods:prod}); // make sure the key is prods as its used in product ejs better to use an enum and save it as prods 
-    }
+    // addNewProduct(req,res){
+    //     console.log(JSON.stringify(req.body));
+    //     ProductModel.append(req.body); // req . body gets the prod data in obj form 
+    //     let prod = ProductModel.get();
+    //     return res.render("products",{prods:prod}); // make sure the key is prods as its used in product ejs better to use an enum and save it as prods 
+    // }
 
     addProductViaApi(req,res){
         console.log(JSON.stringify(req.body));
         ProductModel.append(req.body); // req . body gets the prod data in obj form 
-        let prod = ProductModel.get();
-        res.render("products",{prods:prod});      
+        res.send("data updated successfully");
+        //res.send("Product information updated successfully");
+        
     }
 
     getUpdateProductView(req,res,next){
