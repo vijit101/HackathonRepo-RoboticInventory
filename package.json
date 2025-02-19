@@ -6,6 +6,7 @@
     "express-ejs": "^2.0.0",
     "express-ejs-layouts": "^2.5.1",
     "express-validator": "^7.2.1",
-    "layouts": "^3.0.2"
+    "layouts": "^3.0.2",
+    "qrcode": "^1.5.4"
   }
 }

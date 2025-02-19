@@ -27,6 +27,7 @@ export default class ProductController{
 
     addNewProduct(req,res){
         ProductModel.append(req.body); // req . body gets the prod data in obj form 
+        // makeqr(url)
         let prod = ProductModel.get();
         return res.render("products",{prods:prod}); // make sure the key is prods as its used in product ejs better to use an enum and save it as prods 
     }
