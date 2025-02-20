@@ -1,0 +1,6 @@
+how to run ?
+for the backend 
+open the folder and then do npm i 
+node index.js 
+
+localhost:8080/

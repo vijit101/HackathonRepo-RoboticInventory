@@ -1,0 +1,54 @@
+<!-- views/update-product.ejs -->
+
+<h1 class="mt-5 mb-4">Update Product</h1>
+
+<%if(errorMessage){ %>
+<div class="alert alert-danger" role="alert">
+    <%=errorMessage %>
+  </div>
+  <% } %>
+
+  
+<form action="/update-product" method="post"> 
+    <!-- submit at the default path  -->
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= product.id %>">
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="name" name="name" value = "<%=product.name %>" required >
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Product Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3"   required > <%= product.description %></textarea >
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" name="price" value= "<%= product.price%>" step="0.01" min="0"  required >
+    </div>
+    <div class="mb-3">
+        <label for="imageURL" class="form-label">Image URL</label>
+        <input type="url" class="imageURL" id="imageURL" name="imageURL" value= "<%=product.imageURL%>" required >
+    </div>
+
+    <div class="mb-3">
+        <label for="stockLeft" class="form-label">Quanitity in Stock</label>
+        <input type="number" class="form-control" id="stockLeft" name="stockLeft" value= "<%= product.stockLeft%>" step="0.01" min="0"  required >
+    </div>
+
+    <div class="mb-3">
+        <label for="expiryDate" class="form-label">Expiry Date dd/mm/yyyy</label>
+        <textarea class="form-control" id="expiryDate" name="expiryDate" rows="3"   required  > <%= product.expiryDate %></textarea >
+    </div>
+
+    <div class="mb-3">
+        <label for="categoryType" class="form-label">Product Category</label>
+        <input type="text" class="form-control" id="categoryType" name="categoryType" value = "<%=product.categoryType %>" required >
+    </div>
+
+    <div class="mb-3">
+        <label for="thresholdQuantity" class="form-label">Enter Minimum Product Quantity for Restock</label>
+        <input type="number" class="form-control" id="thresholdQuantity" name="thresholdQuantity" value = "<%=product.thresholdQuantity %>" required >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Product</button>
+</form>

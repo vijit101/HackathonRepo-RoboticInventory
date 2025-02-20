@@ -1,0 +1,64 @@
+[
+  {
+    "name": "guitar",
+    "description": "Rock the world",
+    "price": "100",
+    "imageURL": "https://yamaha.ndcdn.in/media/catalog/product/cache/9e0f31af0cdc06df956748b13dabad87/c/4/c40mii.png",
+    "stockLeft": "10",
+    "expiryDate": "none",
+    "categoryType": "Instrument",
+    "thresholdQuantity": "1",
+    "id": 1,
+    "noOfTimesShopLifted": 0,
+    "qrCodeURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAAK9SURBVO3BQW7kQAwEwSxC//9yro88NSCMNGsTjIg/WGMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRrl4kNJ+CaVLgmdSpeEE5WTJHyTyieKNUqxRinWKBcPU3lSEj6h0iXhEypPSsKTijVKsUYp1igXL0vCHSp3qHRJ6FQ6lS4JncodSbhD5U3FGqVYoxRrlIs/LgmdSpeETmWyYo1SrFGKNcrFH6dyRxI6lUmKNUqxRinWKBcvU/mmJHQqXRK6JHQqd6j8JsUapVijFGuUi4cl4ZuS0Kl0SehUuiTckYTfrFijFGuUYo1y8SGV3yQJnUqXhDtU/pJijVKsUYo1ysWHktCpdEk4UemScIfKm5LQqZwkoVPpknCi8olijVKsUYo1ysXDktCpdEm4Q+WOJHwiCSdJOFHpkvBNxRqlWKMUa5SLL1PpktCpdEnoVE5UTpLQqXRJ6FQ+odIl4U3FGqVYoxRrlIuXJeFE5USlS0Kn0iWhU3lSEu5Q6VS6JDypWKMUa5RijXLxMpUuCV0S3pSETqVLwkkSOpWTJJwk4U3FGqVYoxRrlIsPqdyh8qQkdConSehUTpJwkoQ7VN5UrFGKNUqxRok/+EASvkmlS8KTVE6ScKLSJeFE5UnFGqVYoxRrlIuHqTwpCU9SeZJKl4T/qVijFGuUYo1y8bIk3KFyh0qXhDuS0Kl0SXiSypuKNUqxRinWKBd/XBLuSEKncofKicpJEjqVJxVrlGKNUqxRLoZR6ZLQqXRJ6FQ+kYROpVN5U7FGKdYoxRrl4mUqb1LpknCHSpeETqVLwonKHUnoVD5RrFGKNUqxRrl4WBK+KQn/k8pJEjqVTuVJxRqlWKMUa5T4gzVGsUYp1ijFGqVYoxRrlGKNUqxRijVKsUYp1ijFGqVYoxRrlGKNUqxR/gG7CwwCuWb49AAAAABJRU5ErkJggg=="
+  },
+  {
+    "id": "2",
+    "name": "Alchemist ",
+    "description": "Great book on life and philosophy of life ",
+    "price": "10",
+    "imageURL": "https://m.media-amazon.com/images/I/81FPzmB5fgL._AC_UF1000,1000_QL80_.jpg",
+    "stockLeft": "10",
+    "expiryDate": "none",
+    "categoryType": "books",
+    "thresholdQuantity": "1",
+    "qrCodeURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAAK1SURBVO3BQW7sWAwEwSxC979yjpdcCXiQur/NYUT8wRqjWKMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoFw8l4ZtUuiR0Kl0STqh0SfgmlSeKNUqxRinWKBcvU3lTEu6o3FF5k8qbkvCmYo1SrFGKNcrFhyXhhMqbknBC5UQSTqh8UrFGKdYoxRrl4o9LQqfSqXRJ6FQmKdYoxRqlWKNc/M+odEnoVP6yYo1SrFGKNcrFh6n8S0m4o/KEym9SrFGKNUqxRrl4WRJ+M5UuCZ3KnST8ZsUapVijFGuUi4dUfpMkdCpdEk6o/CXFGqVYoxRrlIuHktCpnEhCp9Il4YRKl4Q7Kl0S3qRyJwmdyhPFGqVYoxRrlPiDB5JwQqVLQqdyJwmdyokk3FE5kYROpUtCp/JJxRqlWKMUa5SLD1PpknAiCXeS8IRKl4Q3qXRJ6FTeVKxRijVKsUaJP3hREk6odEnoVO4koVP5piR0KneScEfliWKNUqxRijXKxUNJ+KQkdConktCpdEnoVO4koVPpktCpdCqfVKxRijVKsUa5eEjlTSpvUjmRhDsqXRI6lS4Jd1TeVKxRijVKsUa5eCgJ36RyJwmdygmVLgknknBH5ZOKNUqxRinWKBcvU3lTEu6odEnokvCESpeEOyp3ktCpvKlYoxRrlGKNcvFhSTihciIJT6h0STih8psUa5RijVKsUS7+OJUuCSeS0KmcSEKn0iXhThI6lSeKNUqxRinWKBfDqNxJQqdyJwmdyhMqn1SsUYo1SrFGufgwlX8pCZ3KnSScULmj8k3FGqVYoxRrlIuXJeGbktCpnEjCiSTcUTmRhE7liWKNUqxRijVK/MEao1ijFGuUYo1SrFGKNUqxRinWKMUapVijFGuUYo1SrFGKNUqxRinWKP8BT8AM7xo7WEoAAAAASUVORK5CYII="
+  },
+  {
+    "name": "tool of titans",
+    "description": "Tools of titans ",
+    "price": "10",
+    "imageURL": "https://m.media-amazon.com/images/I/81Qaq2O8dsL._AC_UF1000,1000_QL80_.jpg",
+    "stockLeft": "4",
+    "expiryDate": "none ",
+    "categoryType": "books",
+    "thresholdQuantity": "1",
+    "id": 3,
+    "noOfTimesShopLifted": 0,
+    "qrCodeURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAAKdSURBVO3BQW7kQAwEwSxC//9yro88NSBIM7C5jIg/WGMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRrl4qEkfJPKSRLuUDlJwjepPFGsUYo1SrFGuXiZypuScIdKl4Q3qbwpCW8q1ijFGqVYo1x8WBLuULkjCZ3KicqbknCHyicVa5RijVKsUS7+c0noVP6yYo1SrFGKNcrFcCr/k2KNUqxRijXKxYep/CZJ6FSeUPlNijVKsUYp1igXL0vCb5KETqVLQqdykoTfrFijFGuUYo1y8ZDKX6ZyovKXFGuUYo1SrFHiDx5IQqfSJeFNKidJuEPlJAlvUvmkYo1SrFGKNUr8wQcloVN5Igm/mUqXhDtUnijWKMUapVijXDyUhE7lJAmdSpeEO1S6JHQqJ0l4QqVLwh0qbyrWKMUapVijXHyYSpeEO1TuUDlJwonKNyWhU3miWKMUa5RijXLxsiR0KidJ6FS6JHQqXRI6lROVLgldEk5U7lDpkvBJxRqlWKMUa5SLh1TuULlD5YkkdConKidJOFHpktCpdEl4U7FGKdYoxRol/uCBJHyTykkSOpUuCZ1Kl4QTld+sWKMUa5RijXLxMpU3JeEkCXeonKicJKFT6ZJwh8qbijVKsUYp1igXH5aEO1Q+KQmdyh0qJyp3JKFTeaJYoxRrlGKNcjFcEk6S8CaVLgmdSqfypmKNUqxRijXKxXAqJ0noVLokdConSehUvqlYoxRrlGKNcvFhKp+kcpKEO5JwRxJOktCpfFKxRinWKMUa5eJlSfimJHQqJypdEjqVJ1ROktCpvKlYoxRrlGKNEn+wxijWKMUapVijFGuUYo1SrFGKNUqxRinWKMUapVijFGuUYo1SrFGKNco/aWcH2ZL8O+wAAAAASUVORK5CYII="
+  },
+  {
+    "id": "4",
+    "name": "Witcher 3",
+    "description": "Toss a coin to your witcher banana tiger",
+    "price": "10",
+    "imageURL": "https://m.media-amazon.com/images/I/71mF5e0DPoS._AC_UF1000,1000_QL80_.jpg",
+    "stockLeft": "1",
+    "expiryDate": "  10",
+    "categoryType": "books",
+    "thresholdQuantity": "1",
+    "qrCodeURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAAK3SURBVO3BQW7kQAwEwSxC//9yro88NSBIY4y5jIg/WGMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRrl4qEk/CaVLgmdykkSTlS6JPwmlSeKNUqxRinWKBcvU3lTEk5UuiR0Kicqd6i8KQlvKtYoxRqlWKNcfFgS7lB5QqVLQqfSJaFTuSMJd6h8UrFGKdYoxRrl4o9LQqfSqXRJ6FQmKdYoxRqlWKNc/GdUuiR0Kn9ZsUYp1ijFGuXiw1S+SRI6lSdUvkmxRinWKMUa5eJlSfgmSehUuiR0KidJ+GbFGqVYoxRrlIuHVL6ZSpeEO1T+kmKNUqxRijXKxUNJ6FTuSEKn0iXhjiTcodIl4U0qJ0noVJ4o1ijFGqVYo8QfPJCEE5WTJJyodEnoVO5IwonKHUnoVLokdCqfVKxRijVKsUa5+LAknKh0SeiS0KnckYQTlS4Jb1LpktCpvKlYoxRrlGKNEn/woiR0Kl0STlTuSMIdKm9KQqdykoQTlSeKNUqxRinWKBdfLgmflIRO5SQJnUqXhE6lU/mkYo1SrFGKNcrFy1ROVO5QOUnCicoTSehUuiR0Kl0STlTeVKxRijVKsUa5eCgJv0nlRKVLQqdyh8odSThR+aRijVKsUYo1ysXLVN6UhBOVLgknSXgiCScqJ0noVN5UrFGKNUqxRrn4sCTcoXJHEp5Q6ZJwh8o3KdYoxRqlWKNc/HEqXRLuSEKnckcSOpUuCSdJ6FSeKNYoxRqlWKNcDKNykoRO5SQJncoTKp9UrFGKNUqxRrn4MJVvonKShDtUTlR+U7FGKdYoxRrl4mVJ+E1JOFE5ScIdSThRuSMJncoTxRqlWKMUa5T4gzVGsUYp1ijFGqVYoxRrlGKNUqxRijVKsUYp1ijFGqVYoxRrlGKNUqxR/gHsEBLpEOY28QAAAABJRU5ErkJggg=="
+  },
+  {
+    "id": "5",
+    "name": "aloo",
+    "description": "potatoes ",
+    "price": "10",
+    "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3v3k3Pgr9O3B48ZpTFa-AhkZvO2bXFhAnQ&s",
+    "stockLeft": "2",
+    "expiryDate": "  none",
+    "categoryType": "veggies",
+    "thresholdQuantity": "1",
+    "qrCodeURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAAKXSURBVO3BQW7sWAwEwSxC979yjpdcPUCQusfmZ0T8wRqjWKMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoFw8l4ZtUTpLQqXRJ6FROkvBNKk8Ua5RijVKsUS5epvKmJDyRhE7lCZU3JeFNxRqlWKMUa5SLD0vCHSp3JKFT6ZLQJaFTeSIJd6h8UrFGKdYoxRrl4h+j0iWhU/nLijVKsUYp1igXw6n8S4o1SrFGKdYoFx+m8n9KwonKEyq/SbFGKdYoxRrl4mVJ+M1UuiR0KidJ+M2KNUqxRinWKPEHf1gS7lCZrFijFGuUYo0Sf/BAEjqVLglvUrkjCScqJ0l4k8onFWuUYo1SrFHiD36RJHQqXRJ+M5UuCXeoPFGsUYo1SrFGuXgoCZ3KSRJOVLokdCpdEjqVO5LwhEqXhDtU3lSsUYo1SrFGufiwJDyhcqLSJeEJlW9KQqfyRLFGKdYoxRrl4iGVLgl3qHRJeJPKSRK6JJyo3KHSJeGTijVKsUYp1igXL1N5QuWOJJwkoVO5Q6VLwolKl4ROpUvCm4o1SrFGKdYo8QcPJOGbVO5IwolKl4RO5S8p1ijFGqVYo1y8TOVNSThJwonKHSonSehUuiTcofKmYo1SrFGKNcrFhyXhDpVPSkKncofKicodSehUnijWKMUapVijXAyXhJMkvEmlS0Kn0qm8qVijFGuUYo1yMZzKSRI6lS4JncpJEjqVbyrWKMUapVijXHyYyiep3JGEkyTckYSTJHQqn1SsUYo1SrFGuXhZEr4pCScqnUqXhE7lCZWTJHQqbyrWKMUapVijxB+sMYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5RijfIfHPb81aZPLloAAAAASUVORK5CYII="
+  }
+]
