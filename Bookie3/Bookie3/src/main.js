@@ -5,6 +5,7 @@ import { createBookcase } from "./buildObjects/bookshelf.js";
 import { createBackWall } from "./buildObjects/backwall.js";
 import { createRobot } from "./buildObjects/robot.js";
 import { buildBooks } from "./buildObjects/books.js";
+import { setupQRScanning } from './QRscan/QRSetup.js';
 
 // initialize the scene
 const scene = new THREE.Scene();
@@ -17,6 +18,10 @@ scene.add(gridHelper);
 // Add ambient light
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(5, 5, 5);
+scene.add(directionalLight);
 
 // initialize the main camera
 const camera = new THREE.PerspectiveCamera(
@@ -81,6 +86,17 @@ const backWall = createBackWall();
 backWall.position.set(0, 2.5, -1.5);
 scene.add(backWall);
 
+// const baseColorTexture = textureLoader.load(
+//     'textures/BrickWall22_MR_4K/BrickWall22_4K_BaseColor.png',
+//     undefined,
+//     undefined,
+//     (error) => {
+//         console.error('Error loading texture:', error);
+//     }
+// );
+
+// baseColorTexture();
+
 const bookcase = createBookcase();
 bookcase.position.y = 1.6;
 scene.add(bookcase);
@@ -91,6 +107,22 @@ bookcase.add(books); // Add books to your bookcase
 const robot = createRobot();
 robot.position.set(0, 0, 2);
 scene.add(robot);
+
+// Add a test QR code to the scene
+// function addTestQRCode() {
+//     const loader = new THREE.TextureLoader();
+//     const qrTexture = loader.load('path-to-your-qr-code.png');
+    
+//     const qrCode = new THREE.Mesh(
+//         new THREE.PlaneGeometry(0.5, 0.5),
+//         new THREE.MeshBasicMaterial({ map: qrTexture })
+//     );
+    
+//     qrCode.position.set(0, 1.5, -1); // Position near bookshelf
+//     scene.add(qrCode);
+// }
+
+// addTestQRCode();
 
 // Create collision objects
 const collisionObjects = [];
@@ -244,6 +276,9 @@ function handleResize() {
 
 window.addEventListener("resize", handleResize);
 
+// Set up QR scanning
+const scanQR = setupQRScanning(renderer, robotView1, robotView2, robot, scene);
+
 // Animation/render loop
 function animate() {
     requestAnimationFrame(animate);
@@ -258,6 +293,9 @@ function animate() {
         robot.camera1.updateMatrixWorld();
         robot.camera2.updateMatrixWorld();
     }
+
+    // Scan for QR codes
+    scanQR();
 
     // Clear all renderers
     renderer.clear();

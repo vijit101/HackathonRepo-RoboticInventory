@@ -60,12 +60,12 @@ export function createRobot() {
     // Tie two cameras along the length of the robot's body--set at adjustable heights to be able to see into each shelf
     const robotView1 = new THREE.PerspectiveCamera(60, aspect, 0.1, 100);
     robotView1.position.set(0, .8, -.1);
-    robotView1.rotateY(-Math.PI/2); // Make camera face the bookshelf
+    // robotView1.rotateY(-Math.PI/2); // Make camera face the bookshelf
     robot.add(robotView1);
 
     const robotView2 = new THREE.PerspectiveCamera(60, aspect, 0.1, 100);
     robotView2.position.set(0, 2.3, -.1);
-    robotView2.rotateY(-Math.PI/2); // Make camera face the bookshelf
+    // robotView2.rotateY(-Math.PI/2); // Make camera face the bookshelf
     robot.add(robotView2);
 
     // Store cameras as properties on the robot

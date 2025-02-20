@@ -4,15 +4,15 @@ export function createBookcase() {
     // Create bookshelf material
     const sidePanelMaterial = new THREE.MeshStandardMaterial({
         color: '#fd34b2',  // Hot pink
-        emissive: 0xff69b4,
+        emissive: '#954535',
         emissiveIntensity: 0.7,
         roughness: 0.3,
         metalness: 0.7
     });
 
     const shelfMaterial = new THREE.MeshStandardMaterial({
-        color: '#fd5dc1',  // Hot pink
-        emissive: 0xff69b4,
+        color: '#fd34b2',  // Hot pink
+        emissive: '#954535',
         emissiveIntensity: 0.7,
         roughness: 0.3,
         metalness: 0.7
