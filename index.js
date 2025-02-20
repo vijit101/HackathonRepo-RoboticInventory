@@ -4,9 +4,11 @@ import path from 'path';
 import ejsLayouts from "express-ejs-layouts";
 import validationMiddleware from './src/middlewares/validation.middleware.js';
 
+
 const server = express();
 const productController = new ProductController(); 
-
+// init product data 
+productController.LoadData(); // loads json data for products later on will store in db
 // body parsers 
 // for body parsing as post req are mostly text not readable format 
 server.use(express.urlencoded({extended:true})); // for x - form format 
@@ -22,6 +24,7 @@ server.set("views",path.join(path.resolve(),"src","views"));
 server.use(ejsLayouts);
 
 
+
 // add the 3d view over here as a get3D view 
 server.get("/3dView",productController.get3DView);
 
@@ -31,11 +34,16 @@ server.get("/api/products",productController.getAllProductInfo); // return json
 
 server.get("/new",productController.getAddForm); // returns a viewform to add new product
 
-server.post("/",[validationMiddleware],productController.addNewProduct); // can be used to add new items on submit or via api trigger
+server.post("/", [validationMiddleware], async (req, res) => {
+    await productController.addNewProduct(req, res);
+}); // can be used to add new items on submit or via api trigger
 server.post("/api/addProducts",[validationMiddleware],productController.addProductViaApi);
 
 server.get("/update-product/:id",productController.getUpdateProductView);
 server.post("/update-product",productController.postUpdateProduct);
+
+server.get("/qrcode/:id",productController.getproductbyid);
+server.post("/qrcode/:id",productController.updateStockOnPurchase);
 
 server.get("/delete-product/:id",productController.deleteProduct);
 
