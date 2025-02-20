@@ -1,6 +1,5 @@
 how to run ?
-for the backend 
+for the bookie3 
 open the folder and then do npm i 
-node index.js 
+npm run dev
 
-localhost:8080/
