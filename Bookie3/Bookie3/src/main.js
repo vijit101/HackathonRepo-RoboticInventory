@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import jsQR from 'jsqr';
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { createBookcase } from "./buildObjects/bookshelf.js";
 import { createBackWall } from "./buildObjects/backwall.js";
@@ -228,6 +229,17 @@ function handleResize() {
     robotView1.setSize(newWidth, newHeight);
     robotView2.setSize(newWidth, newHeight);
     robotView2.domElement.style.left = `${newWidth + 40}px`;
+
+    // Update robot cameras aspect ratio
+    const robotAspect = robotViewSize.width / robotViewSize.height;
+    if (robot.camera1) {
+        robot.camera1.aspect = robotAspect;
+        robot.camera1.updateProjectionMatrix();
+    }
+    if (robot.camera2) {
+        robot.camera2.aspect = robotAspect;
+        robot.camera2.updateProjectionMatrix();
+    }
 }
 
 window.addEventListener("resize", handleResize);
@@ -239,6 +251,13 @@ function animate() {
     // Update controls and robot
     controls.update();
     robotControls.update();
+
+    // Update robot camera views based on robot's world position
+    if (robot.camera1 && robot.camera2) {
+        // Force cameras to update their matrices
+        robot.camera1.updateMatrixWorld();
+        robot.camera2.updateMatrixWorld();
+    }
 
     // Clear all renderers
     renderer.clear();
