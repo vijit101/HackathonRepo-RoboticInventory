@@ -1,2 +1,2 @@
 # HackathonRepo-RoboticInventory
-A hackathon project by team banana tiger 
+A hackathon project by team BananaforScale
