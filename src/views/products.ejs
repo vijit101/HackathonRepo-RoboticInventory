@@ -6,6 +6,11 @@
             <th scope="col">Description</th>
             <th scope="col">Price</th>
             <th scope="col">Image</th>
+            <th scope="col">Stock Left</th> 
+            <th scope="col">Expiry Date</th>
+            <th scope="col">Category</th>
+            <th scope="col">Minimum Stock</th>
+            <th scope="col">Qr Code</th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
@@ -26,6 +31,24 @@
                 </td>
                 <td>
                     <img src=<%=product.imageURL%> />
+                </td>
+
+                <td scope="col">
+                    <%= product.stockLeft %>
+                </td>
+               
+                <td scope="col">
+                    <%= product.expiryDate %>
+                </td>
+
+                <td scope="col">
+                    <%= product.categoryType %>
+                </td>
+                <td scope="col">
+                    <%= product.thresholdQuantity %>
+                </td>
+                <td>
+                    <img src=<%=product.qrCodeURL%> />
                 </td>
                 <td>
                     <a href="/update-product/<%= product.id %>" class="btn btn-warning">Update</a> 
