@@ -24,8 +24,7 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     200
 );
-camera.position.z = 15;
-camera.position.y = 4;
+camera.position.set(0, 4, 15);
 
 // initialize the main renderer
 const canvas = document.querySelector("canvas.threejs");
@@ -86,43 +85,100 @@ bookcase.position.y = 1.6;
 scene.add(bookcase);
 
 const books = buildBooks();
-scene.add(books.book1);
-scene.add(books.book2);
-scene.add(books.book3);
-scene.add(books.book4);
-scene.add(books.book5);
-
-// Position books:
-books.book1.position.set(1, 2, 0);
-books.book2.position.set(2, 0, 0);
-books.book3.position.set(0, 3, 0);
-books.book4.position.set(0, 2, 0);
-books.book5.position.set(0, .75, 0);
+bookcase.add(books); // Add books to your bookcase
 
 const robot = createRobot();
-robot.position.set(5, 0, 5);
+robot.position.set(0, 0, 2);
 scene.add(robot);
+
+// Create collision objects
+const collisionObjects = [];
+
+// Add collision boxes for bookcase and wall
+function createCollisionBox(object, margin = 0.5) {
+    const bbox = new THREE.Box3().setFromObject(object);
+    const collisionBox = {
+        min: bbox.min.clone(),
+        max: bbox.max.clone()
+    };
+    
+    // Add margin around objects
+    collisionBox.min.x -= margin;
+    collisionBox.min.z -= margin;
+    collisionBox.max.x += margin;
+    collisionBox.max.z += margin;
+    
+    return collisionBox;
+}
+
+// Add collision boxes after creating objects
+collisionObjects.push(createCollisionBox(bookcase));
+collisionObjects.push(createCollisionBox(backWall));
 
 // Robot movement controls
 const robotControls = {
-    speed: 0.1,
+    speed: 0.01,
     rotationSpeed: 0.03,
     movement: {
         forward: false,
         backward: false,
         left: false,
-        right: false
+        right: false,
+        strafeLeft: false,
+        strafeRight: false
     },
+
+    checkCollision(newPosition) {
+        // Create a small collision box around the robot
+        const robotRadius = 0.5; // Adjust based on robot size
+        const robotBox = {
+            min: new THREE.Vector3(
+                newPosition.x - robotRadius,
+                newPosition.y,
+                newPosition.z - robotRadius
+            ),
+            max: new THREE.Vector3(
+                newPosition.x + robotRadius,
+                newPosition.y + 1,
+                newPosition.z + robotRadius
+            )
+        };
+
+        // Check collision with all objects
+        for (const obj of collisionObjects) {
+            if (this.boxesIntersect(robotBox, obj)) {
+                return true; // Collision detected
+            }
+        }
+        return false; // No collision
+    },
+
+    boxesIntersect(box1, box2) {
+        return (box1.min.x <= box2.max.x && box1.max.x >= box2.min.x) &&
+               (box1.min.y <= box2.max.y && box1.max.y >= box2.min.y) &&
+               (box1.min.z <= box2.max.z && box1.max.z >= box2.min.z);
+    },
+
     update() {
         // Calculate forward direction based on robot's rotation
         const direction = new THREE.Vector3(0, 0, -1);
         direction.applyQuaternion(robot.quaternion);
+
+        // Right direction (for strafing)
+        const rightDirection = new THREE.Vector3(1, 0, 0);
+        rightDirection.applyQuaternion(robot.quaternion);
         
         if (this.movement.forward) {
             robot.position.add(direction.multiplyScalar(this.speed));
         }
         if (this.movement.backward) {
             robot.position.add(direction.multiplyScalar(-this.speed));
+        }
+        if (this.movement.strafeLeft) {
+            robot.position.add(rightDirection.clone().multiplyScalar(-this.speed));
+        }
+        if (this.movement.strafeRight) {
+            robot.position.add(rightDirection.clone().multiplyScalar(this.speed));
         }
         if (this.movement.left) {
             robot.rotateY(this.rotationSpeed);
@@ -140,6 +196,8 @@ const handleKeyEvent = (event, isKeyDown) => {
         'ArrowUp': 'forward',
         's': 'backward',
         'ArrowDown': 'backward',
+        'q': 'strafeLeft',
+        'e': 'strafeRight',
         'a': 'left',
         'ArrowLeft': 'left',
         'd': 'right',
