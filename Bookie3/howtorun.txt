@@ -1,5 +1,0 @@
-how to run ?
-for the bookie3 
-open the folder and then do npm i 
-npm run dev
-
