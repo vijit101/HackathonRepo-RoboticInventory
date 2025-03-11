@@ -9,7 +9,7 @@ export default class ProductController{
         //console.log(prods);
         //console.log(path.resolve());// return execution directory hence we ran the methodfrom index.js 
         // return res.sendFile(path.join(path.resolve(),"src","views","products.html"));
-        res.render("products",{prods:prods});
+        res.render("products",{prods:prods , userEmail:req.session.userEmail});
         // renders products,ejs page passing the prods data 
     }
 
@@ -19,7 +19,7 @@ export default class ProductController{
     }
 
     getAddForm(req,res){
-        res.render("new-product",{errorMessage:null});
+        res.render("new-product",{errorMessage:null,userEmail:req.session.userEmail});
     }
 
     // get3DView(req,res){
@@ -30,7 +30,7 @@ export default class ProductController{
         await ProductModel.append(req.body);  // Wait for QR code generation
         let prod = ProductModel.get();
         await ProductController.saveFileToModel(prod); // Wait for save
-        return res.render("products", { prods: prod });
+        return res.render("products", { prods: prod ,userEmail:req.session.userEmail});
     }
     
 
@@ -42,7 +42,7 @@ export default class ProductController{
     // }
 
     addProductViaApi(req,res){
-        console.log(JSON.stringify(req.body));
+        //console.log(JSON.stringify(req.body));
         ProductModel.append(req.body); // req . body gets the prod data in obj form 
         ProductController.saveFileToModel(prod);
         res.send("data updated successfully");
@@ -57,7 +57,7 @@ export default class ProductController{
         // const {id} = req.body;
         const prodFound = ProductModel.getByID(id);
         if(prodFound){
-            res.render("update-product",{product:prodFound,errorMessage:null});
+            res.render("update-product",{product:prodFound,errorMessage:null,userEmail:req.session.userEmail});
         }
         else{
             res.status(401).send("product not found");
@@ -81,11 +81,11 @@ export default class ProductController{
     }
 
     postUpdateProduct(req,res){
-        console.log(req.body);
+        //console.log(req.body);
         ProductModel.update(req.body); // req . body gets the prod data in obj form 
         let prod = ProductModel.get();
         ProductController.saveFileToModel(prod);
-        return res.render("products",{prods:prod});
+        return res.render("products",{prods:prod,userEmail:req.session.userEmail});
     }
 
     deleteProduct(req,res){
@@ -95,7 +95,7 @@ export default class ProductController{
             ProductModel.delete(id);
             let prod = ProductModel.get();
             ProductController.saveFileToModel(prod);
-            return res.render("products",{prods:prod});
+            return res.render("products",{prods:prod,userEmail:req.session.userEmail});
         }
         else{
             res.status(401).send("product not found");

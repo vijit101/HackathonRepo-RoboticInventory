@@ -87,6 +87,7 @@ static async append(productobj) {
   }
 
   static readDataSync(){
+    // overwrite products 
     products = JSON.parse(fs.readFileSync( "./productsData.json","utf8")); // convert to object
     //console.log(products);
   }
