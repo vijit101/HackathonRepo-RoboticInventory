@@ -3,15 +3,21 @@ import ProductController from './src/controllers/product.controller.js';
 import UserController from './src/controllers/user.controller.js';
 import path from 'path';
 import ejsLayouts from "express-ejs-layouts";
+import session from 'express-session';// middle ware gens sessions on req
+import cookieParser from 'cookie-parser';
 import validationMiddleware from './src/middlewares/validation.middleware.js';
 import { auth } from './src/middlewares/auth.middleware.js';
-import session from 'express-session';// middle ware gens sessions on req
+import { setLastVisit } from './src/middlewares/lastVisit.middleware.js';
+
+
 
 const server = express(); 
 const productController = new ProductController(); 
 const userController = new UserController();
 // init product data 
 productController.LoadData(); // loads json data for products later on will store in db
+server.use(cookieParser());
+//server.use(setLastVisit); this sets last visit middleware on every request
 server.use(
     session({
     secret:'useKeyGen',
@@ -45,7 +51,7 @@ server.get("/logout",userController.logout);
 //server.get("/3dView",productController.get3DView);
 
 // get product info api's
-server.get("/",auth,productController.getproducts); // return view 
+server.get("/",[auth,setLastVisit],productController.getproducts); // return view 
 server.get("/api/products",productController.getAllProductInfo); // return json 
 
 server.get("/new",auth,productController.getAddForm); // returns a viewform to add new product
