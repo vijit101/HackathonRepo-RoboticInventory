@@ -22,7 +22,6 @@ The **Robotic Inventory System** is a Node.js and Express-based backend that pro
 - **Backend:** Node.js, Express.js
 - **View Engine:** EJS with express-ejs-layouts
 - **Middleware:** Express Session, Cookie Parser, Custom Auth Middleware
-- **Database (Currently JSON-based):** Will be replaced with an actual DB
 - **QR Code Generation:** `qrcode` package
 - **Validation:** `express-validator`
 
