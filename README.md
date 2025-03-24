@@ -115,7 +115,6 @@ Backend/
 ---
 
 ## 📌 Future Improvements
-- Migrate from JSON storage to a real database (MongoDB/PostgreSQL)
 - Implement role-based access control (RBAC)
 - Add RESTful API documentation with Swagger
 - Implement unit tests with Jest
